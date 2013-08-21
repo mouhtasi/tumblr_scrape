@@ -3,9 +3,11 @@
 scriptPath="$(readlink -f $0)"
 cd "${scriptPath%/*}"
 
-DIRS=`ls -l images | egrep '^d' | awk '{print $9}'`
+PAGES=$1
+if [ "$(($1+0))" -le 0 ]; then PAGES=1; fi
 
-for DIR in $DIRS
-	do
-		python tumblr_scrape.py ${DIR} $1
-	done
+for DIR in images/*; do
+	if [ -d "${DIR}" ]; then
+		python tumblr_scrape.py "${DIR##*/}" "$PAGES"
+	fi
+done
