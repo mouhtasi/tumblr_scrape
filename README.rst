@@ -1,18 +1,24 @@
 Tumblr Image Scraper
+====================
 
 Description:
-	Scrape images from a tumblr blog.
+------------
+Scrape images from a tumblr blog.
 	
-	tumblr_scrape.py is the main script.
-	update.sh reads the folder names in ./images/ as previously scraped usernames and loops the main script.
+tumblr_scrape.py is the main script.
+update.sh reads the folder names in ./images/ as previously scraped usernames and loops the main script.
 
 Usage: 
-	tumblr_scrape.py: python tumblr_scrape.py <username> [max_pages]
-	update.sh: ./update.sh <max_pages>
+------
+tumblr_scrape.py: python tumblr_scrape.py <username> [max_pages]
+update.sh: ./update.sh <max_pages>
 
-Dependencies: requests (http://docs.python-requests.org/)
+Dependencies:
+-------------
+requests (http://docs.python-requests.org/)
 
 License:
+--------
 
 The MIT License (MIT)
 
