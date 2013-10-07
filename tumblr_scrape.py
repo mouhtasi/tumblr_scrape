@@ -18,8 +18,10 @@ elif len(sys.argv) > 1:
 	username = sys.argv[1]
 	if len(sys.argv) == 3:
 		max_pages = int(sys.argv[2])
+		no_limit = False
 	else:
-		max_pages = True 
+		max_pages = True
+		no_limit = True # No set limit. Won't need to -= later on since it's a boolean.
 
 	count = 1
 	if not os.path.exists('images/' + username):
@@ -88,6 +90,7 @@ elif len(sys.argv) > 1:
 				#time.sleep(random.random())
 
 		count += 1
-		max_pages -= 1
+		if not no_limit:
+			max_pages -= 1
 
 	previous.close()
