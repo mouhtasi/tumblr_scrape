@@ -8,6 +8,6 @@ if [ "$(($1+0))" -le 0 ]; then PAGES=1; fi
 
 for DIR in images/*; do
 	if [ -d "${DIR}" ]; then
-		python tumblr_scrape.py "${DIR##*/}" "$PAGES"
+		python2 tumblr_scrape.py "${DIR##*/}" "$PAGES"
 	fi
 done

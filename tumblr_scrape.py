@@ -55,8 +55,16 @@ elif len(sys.argv) > 1:
 			previous.close()
 			exit(0)
 		
+		images_already_fetched = 0
+
 		for match in matches:
-			if match not in already_checked and 'avatar' not in match:
+			if match in already_checked:
+				images_already_fetched += 1
+				if images_already_fetched == len(matches):
+					print 'Images already exist. Complete.'
+					previous.close()
+					exit(0)
+			elif 'avatar' not in match:
 				final_url = match # the url actually downloaded
 				img_name = match.rsplit('/', 1)[1]
 
