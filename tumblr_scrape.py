@@ -58,7 +58,7 @@ elif len(sys.argv) > 1:
 		images_already_fetched = 0
 
 		for match in matches:
-			if match in already_checked:
+			if match in already_checked or 'avatar' in match:
 				images_already_fetched += 1
 				if images_already_fetched == len(matches):
 					print 'Images already exist. Complete.'
